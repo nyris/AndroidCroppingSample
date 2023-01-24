@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="nyris_color_primary">#E31B5D</color>
+    <color name="nyris_color_primary_dark">#E31B5D</color>
+    <color name="nyris_color_accent">#E31B5D</color>
+
+    <color name="white_translucent">#AAFFFFFF</color>
+    <color name="border">@color/white_translucent</color>
+    <color name="guideline">@color/white_translucent</color>
+    <color name="corner">@android:color/white</color>
+    <color name="surrounding_area">#59000000</color>
+</resources>

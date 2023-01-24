@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.appcompat}"
+    implementation "androidx.fragment:fragment-ktx:${rootProject.ext.fragment}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.constraintlayout}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.recylerview}"
+    implementation "androidx.cardview:cardview:${rootProject.ext.cardview}"
+    implementation "io.coil-kt:coil:${rootProject.ext.coil}"
+    implementation "com.google.code.gson:gson:${rootProject.ext.gsonVersion}"
+
+    implementation(project(":croppingview-lib"))
+    api "io.nyris:sdk:$nyris_sdk"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxjava}"
+    implementation("io.nyris:camera:${rootProject.ext.nyris_camera}") {
+        exclude group: 'org.tensorflow'
+    }
+}
